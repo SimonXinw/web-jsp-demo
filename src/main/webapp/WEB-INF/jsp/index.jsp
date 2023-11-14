@@ -18,6 +18,7 @@ pageEncoding="UTF-8"%>
         </div>
         <div>
           <input
+            id="userName"
             class="easyui-textbox"
             data-options="iconCls:'icon-man',iconWidth:30,iconAlign:'left',prompt:'用户名'"
             name="userName"
@@ -65,8 +66,10 @@ pageEncoding="UTF-8"%>
         </div>
       </form>
     </div>
-    <!-- script -->
+    <!-- jsp 组件 -->
+    <%@include file="popup.jsp" %>
 
+    <!-- script -->
     <script
       src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"
       type="application/javascript"
