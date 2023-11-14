@@ -59,7 +59,7 @@ pageEncoding="UTF-8"%>
    * @关闭弹窗
    */
   function closeDialog() {
-    const selectValue = $('#numberSelect').val();
+    var selectValue = $('#numberSelect').find('option:selected').text();
 
     $('#userName').textbox('setValue', selectValue);
 

@@ -1,8 +1,8 @@
 {
   "success": true,
   "data": [
-    { "value": "出类拔萃", "label": "出类拔萃" },
-    { "value": "鹤立鸡群", "label": "鹤立鸡群" },
-    { "value": "英气逼人", "label": "英气逼人" }
+    { "value": "1", "label": "出类拔萃" },
+    { "value": "2", "label": "鹤立鸡群" },
+    { "value": "3", "label": "英气逼人" }
   ]
 }
