@@ -3,12 +3,18 @@ pageEncoding="UTF-8"%>
 <html>
   <head>
     <title>JSP Demo</title>
+    <!--  jquery -->
+    <script
+      src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"
+      type="application/javascript"
+    ></script>
     <link
       rel="stylesheet"
       href="js/jquery-easyui-1.8.6/themes/default/easyui.css"
     />
     <link rel="stylesheet" href="js/jquery-easyui-1.8.6/themes/icon.css" />
     <link rel="stylesheet" href="css/index.css" />
+    <script src="js/jquery-easyui-1.8.6/jquery.easyui.min.js"></script>
   </head>
   <body>
     <div class="page">
@@ -68,13 +74,6 @@ pageEncoding="UTF-8"%>
     </div>
     <!-- jsp 组件 -->
     <%@include file="popup.jsp" %>
-
-    <!-- script -->
-    <script
-      src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"
-      type="application/javascript"
-    ></script>
-    <script src="js/jquery-easyui-1.8.6/jquery.easyui.min.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>
