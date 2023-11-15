@@ -4,17 +4,21 @@ pageEncoding="UTF-8"%>
 <div
   id="dlg"
   class="easyui-dialog"
-  style="width: 400px; height: 200px; padding: 10px"
+  style="width: 400px; min-height: 200x; padding: 10px"
   closed="true"
   buttons="#dlg-buttons"
 >
   <p>EasyUI弹窗</p>
   <div><button id="dialogRequestBtn">请求</button></div>
-  <select id="numberSelect">
-    <option value="1">选项1</option>
-    <option value="2">选项2</option>
+  <!-- <select id="idiomSelect">
+    <option value="1">选项1</option>    <option vlue="2">选项2</option>
     <option value="3">选项3</option>
-  </select>
+  </select> -->
+  <div class="list-wrap" onclick="console.log('父元素 div点击事件触发')">
+    <ul id="idiomSelect" onclick="console.log('父元素 ul 点击事件触发')">
+      <li><a href="#" onclick="onSelect()">demo</a></li>
+    </ul>
+  </div>
 
   <!-- 创建弹窗的按钮 -->
   <div id="dlg-buttons">
@@ -33,17 +37,33 @@ pageEncoding="UTF-8"%>
       data: {},
       success: function (response) {
         // 请求成功时的回调函数
-        console.log(response); // 在控制台打印返回的数据
-
         if (!response?.success) return;
 
         // 清空原有选项
-        $('#numberSelect').empty();
+        $('#idiomSelect').empty();
 
-        // 动态添加选项
+        // for (let item of response.data) {
+        //   $('#idiomSelect').append(new Option(item.label, item.value));
+        // }
+
         for (let item of response.data) {
-          $('#numberSelect').append(new Option(item.label, item.value));
+          var liTemplate =
+            '<li><a class="idiom-item" href="#" data-value="' +
+            item.value +
+            '"  >' +
+            item.label +
+            '</a></li>';
+
+          $('#idiomSelect').append(liTemplate);
         }
+
+        /**
+         * @选中选项
+         */ $('.idiom-item').on('click', function (e) {
+          e.stopPropagation();
+
+          console.log('a 标签点击事件');
+        });
 
         // 处理返回的数据，更新弹窗内容或其他操作
         // ...
@@ -59,7 +79,7 @@ pageEncoding="UTF-8"%>
    * @关闭弹窗
    */
   function closeDialog() {
-    var selectValue = $('#numberSelect').find('option:selected').text();
+    var selectValue = $('#idiomSelect').find('option:selected').text();
 
     $('#userName').textbox('setValue', selectValue);
 
